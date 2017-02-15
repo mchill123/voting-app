@@ -35,11 +35,26 @@ module.exports = function (app, passport) {
 		.get(isLoggedIn, function (req, res) {
 			res.sendFile(path + '/public/profile.html');
 		});
+		
+	app.route('/mypolls')
+		.get(isLoggedIn, function(req, res){
+			res.sendFile(path + '/public/mypolls.html');
+		});
+		
+	app.route('/createpoll')
+		.get(isLoggedIn, function(req,res){
+			res.sendFile(path + '/public/createpoll.html');
+		});
 
 	app.route('/api/:id')
 		.get(isLoggedIn, function (req, res) {
 			res.json(req.user.github);
 		});
+		
+	app.route('/create-new-poll')
+		.post(function(req,res){
+			res.json(req);
+		});	
 
 	app.route('/auth/github')
 		.get(passport.authenticate('github'));
@@ -54,4 +69,9 @@ module.exports = function (app, passport) {
 		.get(isLoggedIn, clickHandler.getClicks)
 		.post(isLoggedIn, clickHandler.addClick)
 		.delete(isLoggedIn, clickHandler.resetClicks);
+		
+	
 };
+
+
+	

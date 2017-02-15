@@ -1,12 +1,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+<html>
 
 <div class="container">
-	<div class="row">
+    <div class="row">
 		<div class="col-xs-3">
 			<a class="menu" href="/profile">
 				<button type="btn" style="width:150">
 				<p>Profile</p>	
+				</button>
+				</a>
+		</div>
+		<div class="col-xs-3" align="center">
+		<a class="menu" href="/">
+		        <button type="btn" style="width:150">
+				<p>Home</p>	
 				</button>
 				</a>
 		</div>
@@ -17,33 +24,29 @@
 				</button>
 				</a>
 		</div>
-		<div class="col-xs-3" align="center">
-		<a class="menu" href="/createpoll">
-				<button type="btn" style="width:150">
-				<p>Create New Poll</p>	
-				</button>
-				</a>
-		</div>
 		<div class="col-xs-3" align="right">
 		<a class="menu" href="/logout">
-				<button type="btn" style="width:150">
+		    	<button type="btn" style="width:150">
 				<p>Logout</p>	
 				</button>
 				</a>
 		</div>
 	</div>
+	<br>
+	<br>
+	<div class="row" align="center">
+	    <form action="/create-new-poll" method="post">
+	        Enter Question to Poll 
+	        <br>
+	        <input type="text" name="question" size="50">
+	        <br>
+	        Enter Options serperated by Line 
+	        <br>
+	        <input type="text" name="options" size="50" style="height:200">
+	        <br>
+	        <input type="submit" name="submit">
+	    </form>
+	</div>
 </div>
 
-<hr>
-
-	<header align="center">
-		<p>Welcome, <span id="display-name"></span>!</p>
-	</header>
-
-	
-		
-		
-		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/userController.client.js"></script>
-	
-
+</html>
