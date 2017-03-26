@@ -35,18 +35,19 @@
 	<br>
 	<br>
 	<div class="row" align="center">
-	    <form action="/create-new-poll" method="post">
-	        Enter Question to Poll 
+	    <form action="/createpoll" method="post" enctype="application/json">
+	        <label>Enter Question to Poll</label> 
 	        <br>
 	        <input type="text" name="question" size="50">
 	        <br>
-	        Enter Options serperated by Line 
+	       <label>Enter Options serperated by Line</label> 
 	        <br>
-	        <input type="text" name="options" size="50" style="height:200">
+	        <textarea cols="52" name="options"></textarea>
 	        <br>
 	        <input type="submit" name="submit">
 	    </form>
 	</div>
 </div>
+<script type="text/javascript" src="controllers/userController.client.js"></script>
 
 </html>
